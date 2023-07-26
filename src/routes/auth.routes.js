@@ -1,14 +1,16 @@
 import { Router } from "express";
-import { login, logout, register } from "../controller/auth.controller.js";
+import { getMe, login, register } from "../controller/auth.controller.js";
 
-import { registerValidator } from "../middlewares/validator.middleware.js";
+import { loginValidator, registerValidator } from "../middlewares/validator.middleware.js";
+
+import { authChecker } from "../middlewares/auth.middleware.js";
 
 const route = Router();
 
 
-route.post('/login', login)
+route.post('/login', loginValidator, login)
 route.post('/register', registerValidator, register)
-route.get('/logout', logout)
+route.get('/me', authChecker, getMe)
 
 
 

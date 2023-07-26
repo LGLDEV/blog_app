@@ -13,3 +13,12 @@ export const generateJwt = (id) => {
     )
     return token
 }
+
+export const verifyJWT = (token) => {
+    try {
+        const decoded = 0
+        return decoded
+    } catch (error) {
+        console.log(error);
+    }
+}

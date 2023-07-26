@@ -6,3 +6,9 @@ export const registerValidator = [
     body('name').isLength({min: 3}),
     body('image').optional().isURL()
 ]
+
+
+export const loginValidator = [
+    body('email').isEmail(), 
+    body('password').isLength({min: 5}),
+]

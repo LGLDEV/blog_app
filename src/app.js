@@ -24,7 +24,7 @@ const start = async () => {
         if(err) {
             console.log(err)
         }
-        console.log(`> Server running on ${process.env.PROT} port`)
+        console.log(`> Server running on ${process.env.PORT} port`)
     }) 
     await connection(process.env.MONGO)
 }
