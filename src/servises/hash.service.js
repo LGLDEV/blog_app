@@ -5,5 +5,6 @@ export const generateHash = async (password) => {
 }
 
 export const verifyHash = async (hash, password) => {
+    console.log(hash, password);
     return await bcrypt.compare(password, hash)
 }

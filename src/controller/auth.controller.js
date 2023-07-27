@@ -54,6 +54,7 @@ export const login = async (req, res) => {
         if (!user) {
             return res.status(404).json({ msg: "Auth failed", info: "User not found" })
         }
+        console.log(password);
         const isValid = await verifyHash(user.passwordHash, password);
         if (!isValid) {
             return res.status(404).json({
@@ -73,7 +74,7 @@ export const login = async (req, res) => {
         })
 
     } catch (error) {
-        console.log(err);
+        console.log(error);
         return res.status(500).json({ msg: "Login failed", info: "Internal server error" })
     }
 

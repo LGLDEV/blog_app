@@ -6,6 +6,7 @@ import { connection } from './servises/mongodb.service.js';
 
 // routes
 import authRoute from './routes/auth.routes.js';
+import blogRoute from './routes/blog.routes.js';
 
 // app setup 
 dotenv.config()
@@ -16,6 +17,7 @@ app.use(express.json())
 
 // use routes
 app.use('/auth', authRoute)
+app.use('/blog', blogRoute)
 
 
 
